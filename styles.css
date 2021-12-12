@@ -1,3 +1,7 @@
+body {
+    background-color:purple;
+}
+
 /* 
 #flower:hover {
     transform: rotate(360deg)
@@ -7,3 +11,64 @@
     background-image: url("images/yellow-flower.jpeg");
     background-color: #cccccc;
    } */
+
+
+
+/* To do */
+   /* Page formatting */
+   /* Pop up */
+   /* hover reaveal note letter */
+   /* Interactivity animations? */
+
+
+   *, *::after, *::before {
+       box-sizing: border-box;
+   }
+
+   .popup {
+       position: fixed;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%) scale(0);
+       transition: 200ms ease-in-out;
+       border: 1px solid black;
+       border-radius: 10px;
+       z-index: 10;
+       background-color: white;
+       width: 550px;
+       max-width: 80%;
+   }
+
+   .popup.active {
+    transform: translate(-50%, -50%) scale(1);
+   }
+
+   .popup-header {
+       padding: 10px 15px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border-bottom: 1px dotted black;
+   }
+
+   .popup-header .title {
+       font-size: 1.75rem;
+       font-weight: bold;
+   }
+
+   .popup-header .close-button {
+       cursor: pointer;
+       border: none;
+       outline: none;
+       background: none;
+       font-size: 1.25rem;
+       font-weight: bold;
+   }
+
+   .flower {
+    text-align: center;
+    display: block;
+    padding: 20px;
+    /* padding-top: 10px; */
+}
+

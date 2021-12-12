@@ -7,12 +7,19 @@
 
 </head>
 <body>
+  
+ <button data-popup-target="#popup">Open Popup</button>
 
-     <!-- <div>
-        <img src="Images/ambulance.jpeg" id="ambulance"/>
-    </div> -->
+ <div class="popup" id="popup">
+  
+  <div class="popup-header">
+  <div class="title" id="currentNote" >Select a Note</div>
+  <button data-close-button class="close-button">&times;</button>
+  </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="744.787" height="766.572" viewBox="0 0 744.787 766.572" id="flower">
+ <div class="flower">
+    <!-- FLOWER MUSICAL NOTES -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="515" viewBox="0 0 744.787 766.572" id="flower">
         <g id="Center">
           <g>
             <polygon points="302.047 503.513 232.197 382.528 302.047 261.543 441.749 261.543 511.6 382.528 441.749 503.513 302.047 503.513" fill="#fff"/>
@@ -56,10 +63,29 @@
           <polygon points="495.645 107.155 495.645 107.155 495.773 106.934 434.034 0 310.557 0 248.819 106.934 248.947 107.155 495.645 107.155" fill="#f68f39"/>
         </g>
       </svg>
+    </div>
+
+      
+    </div> 
+    <!-- END POPUP -->
+
+
+<div>
+    <button id="octaveDown">Octave -</button>
+    <button id="octaveUp">Octave +</button>
+</div>
       
 <div>
     <button id="save1">Save 1</button>
     <button id="set1">Set 1</button>
+</div>
+<div>
+  <button id="save2">Save 2</button>
+  <button id="set2">Set 2</button>
+</div>
+<div>
+  <button id="save3">Save 3</button>
+  <button id="set3">Set 3</button>
 </div>
 
     <!-- <script src="howler/dist/howler.js"></script>   -->

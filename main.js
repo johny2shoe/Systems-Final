@@ -1,74 +1,113 @@
+//Flower Popup
+const openPopupButtons = document.querySelectorAll('[data-popup-target]')
+const closePopupButtons = document.querySelectorAll('[data-close-button]')
+
+openPopupButtons.forEach(button => {
+  button.addEventListener('click', () => { 
+    const popup = document.querySelector(button.dataset.popupTarget)
+    openPopup(popup)
+  })
+})
+
+closePopupButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const popup = button.closest('.popup')
+    closePopup(popup)
+  })
+})
+
+function openPopup(popup) {
+  if (popup == null) return
+  popup.classList.add('active')
+}
+
+function closePopup(popup) {
+  if (popup == null) return
+  popup.classList.remove('active')
+}
+
+
+// HERE THERE BE MUSIC - TONE.JS
+// 
 let octave = 4;
 let note = 'C';
 let playNote;
+let synthDetune = -1200;
 
-//Play corresponding note
+const clickSynth = new Tone.Synth().toDestination();
+
+
+//Create PolySynth
+const polySynth = new Tone.PolySynth().toDestination();
+// set the attributes across all the voices using 'set'
+polySynth.set({ detune: synthDetune }); 
+
+//Play Corresponding Notes
 var notes = document.getElementsByClassName("note");
 var currentNote;
 notesArray = [];
 
 for(var i = notes.length; i--;) {
 currentNote = notes[i];
+//Click to Store Notes
 currentNote.onclick = function() {
+  //Get Note
   note = this.getAttribute('data-name');
   playNote = note + octave;
+  //Play Note
+  clickSynth.triggerAttackRelease(playNote, "8n");
+  //Store Note in Array
   notesArray.unshift(playNote);
-  if(notesArray.length > 3){
+  if(notesArray.length > 4){
     notesArray.pop();
   }
   console.log(notesArray);
 };
+// Hover to Show Note
+  currentNote.onmouseover = function() {
+    hoverNote = this.getAttribute('data-name');
+    document.getElementById("currentNote").innerHTML = hoverNote + octave;
+  }
 }
 
-//Set octave
 
+//Press Flower Center to Play Current Notes
 var centerButton = document.getElementById("Center");
 centerButton.onclick = function() {
-  // if (octave < 5) {
-  //   octave ++;
-  // } else {
-  //   octave = 2;
-  // }
   polySynth.triggerAttackRelease(notesArray, 1);
 };
 
+///Change octave
+var octaveUp = document.getElementById("octaveUp");
+octaveUp.onclick = function() {
+    octave ++;
+  }
 
+var octaveDown = document.getElementById("octaveDown");
+octaveDown.onclick = function() {
+      octave --;
+  }
 
+//Store & Play Notes 
+for (var i = 1; i <= 3; i++){
 
+  let savedArray = [];
 
-
-
-
-
-/////POLY SYNTH
-//build array of 3 notes
-//select notes on click, adding them to the front of the array & removing the oldest note
-//play synth when other button is clicked ... center?
-
-
-///Storing Chords
-//
-
-
-
-// '['+""+','+""+','+""+']'
-
-
-
-
-//saved array 
-//button for save array
-//button for set array
-
-let save1array = [];
-
-var saveButton1 = document.getElementById("save1");
-saveButton1.onclick = function() {
-  save1array = notesArray;
-  console.log("saved array:"+save1array);
+  var saveButton = document.getElementById("save"+i);
+  saveButton.onclick = function() {
+    savedArray = notesArray.slice(0);
+    console.log("saved array:"+savedArray);
+  }
+  var setButton = document.getElementById("set"+i);
+  setButton.onclick = function() {
+    notesArray = savedArray.slice(0);
+    polySynth.triggerAttackRelease(notesArray, 1);
+    console.log("notes array:"+notesArray);
+  }
 }
-var setButton1 = document.getElementById("set1");
-setButton1.onclick = function() {
-  notesArray = save1array;
-  console.log("notes array:"+notesArray);
-}
+
+
+//Toggle CSS class hidden with JS 
+
+//Create div & placed above fixed position (flowers), give div onclick function
+//Create save button at each flower position, make rest of flower clickable for Playback function
