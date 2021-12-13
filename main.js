@@ -1,3 +1,7 @@
+//FIND COORDINATES
+
+
+
 //Flower Popup
 const openPopupButtons = document.querySelectorAll('[data-popup-target]')
 const closePopupButtons = document.querySelectorAll('[data-close-button]')

@@ -7,14 +7,19 @@
 
 </head>
 <body>
-  
- <button data-popup-target="#popup">Open Popup</button>
+
+  <div id="bg">
+  <img id="botanical" src="images/botanical-garden.jpeg" usemap="#flowermap"></img>
+  </div>
+
+  <!-- NEED BETTER ICON FOR open-interface... maybe 3d model made in js? -->
+ <button id="open-interface" data-popup-target="#popup">&#9835;</button>
 
  <div class="popup" id="popup">
   
   <div class="popup-header">
-  <div class="title" id="currentNote" >Select a Note</div>
-  <button data-close-button class="close-button">&times;</button>
+    <div class="title" id="currentNote" >Select a Note</div>
+    <button data-close-button class="close-button">&times;</button>
   </div>
 
  <div class="flower">
@@ -63,6 +68,11 @@
           <polygon points="495.645 107.155 495.645 107.155 495.773 106.934 434.034 0 310.557 0 248.819 106.934 248.947 107.155 495.645 107.155" fill="#f68f39"/>
         </g>
       </svg>
+      <div class="octave-buttons">
+        <button id="octaveDown">&#8592;</button>
+          <h1>OCTAVE</h1>
+        <button id="octaveUp">&#8594;</button>
+      </div>
     </div>
 
       
@@ -70,21 +80,48 @@
     <!-- END POPUP -->
 
 
+    <!-- Rect Coords: left, top, right, bottom
+    Circle Coords: center x, center y, radius  -->
+
+<!-- Circle coords="598, 281, 70" -->
+
+    <map name="flowermap">
+      <!-- LEFT TO RIGHT BY COLOR ROW -->
+      <!-- TOP -->
+      <area id="flower1" shape="circle" coords="160,170,70">
+      <area id="flower2" shape="circle" coords="430,220,50">
+      <area id="flower3" shape="circle" coords="515,110,70">
+      <area id="flower4" shape="circle" coords="575,255,65">
+      <area id="flower5" shape="circle" coords="685,170,65">
+      <area id="flower6" shape="circle" coords="865,110,55">
+      <area id="flower7" shape="circle" coords="880,265,80">
+      <area id="flower8" shape="circle" coords="945,350,50">
+      <area id="flower9" shape="circle" coords="1125,150,60">
+      <area id="flower10" shape="circle" coords="1220,30,65">
+      <area id="flower11" shape="circle" coords="1280,175,60">
+      <area id="flower12" shape="circle" coords="1500,195,65">
+      <!-- MID -->
+      <area id="flower13" shape="circle" coords="905,535,55">
+      <area id="flower14" shape="circle" coords="1370,475,75">
+      <!-- BOTTOM -->
+      <area id="flower15" shape="circle" coords="370,670,90">
+      <area id="flower16" shape="circle" coords="535,805,75">
+      <area id="flower17" shape="circle" coords="700,730,70">
+      <area id="flower18" shape="circle" coords="1090,865,70">
+      <area id="flower19" shape="circle" coords="1275,645,85">
+      <area id="flower20" shape="circle" coords="1525,800,75">
+    </map>
+
 <div>
-    <button id="octaveDown">Octave -</button>
-    <button id="octaveUp">Octave +</button>
-</div>
-      
-<div>
-    <button id="save1">Save 1</button>
+    <button class="save-button" id="save1">Save 1</button>
     <button id="set1">Set 1</button>
 </div>
 <div>
-  <button id="save2">Save 2</button>
+  <button class="save-button" id="save2">Save 2</button>
   <button id="set2">Set 2</button>
 </div>
 <div>
-  <button id="save3">Save 3</button>
+  <button class="save-button" id="save3">Save 3</button>
   <button id="set3">Set 3</button>
 </div>
 
