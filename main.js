@@ -93,7 +93,7 @@ octaveDown.onclick = function() {
   }
 
 //Store & Play Notes 
-for (var i = 1; i <= 3; i++){
+for (var i = 1; i <= 20; i++){
 
   let savedArray = [];
 
@@ -102,10 +102,11 @@ for (var i = 1; i <= 3; i++){
     savedArray = notesArray.slice(0);
     console.log("saved array:"+savedArray);
   }
-  var setButton = document.getElementById("set"+i);
+  var setButton = document.getElementById("flower"+i);
   setButton.onclick = function() {
     notesArray = savedArray.slice(0);
     polySynth.triggerAttackRelease(notesArray, 1);
+    console.log("clicked");
     console.log("notes array:"+notesArray);
   }
 }
@@ -115,3 +116,8 @@ for (var i = 1; i <= 3; i++){
 
 //Create div & placed above fixed position (flowers), give div onclick function
 //Create save button at each flower position, make rest of flower clickable for Playback function
+
+
+// function flowerClick(){
+//   console.log('clicked');
+// };

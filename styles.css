@@ -30,13 +30,14 @@ body {
     cursor: pointer;
     border: none;
     outline: none;
-    background: none;
+    /* background: none; */
     /* background-color: rgba(136, 242, 157, 0.5);
     padding: 10px, 20px;
     border-radius: 100%; */
     font-size: 5rem;
     font-weight: bold;
-    color: black;
+    color: honeydew;
+    background: green;
 }
 
 /* POP UP */
@@ -133,3 +134,133 @@ body {
     top: 105px;
     left: 510px;
 } */
+
+.save-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: honeydew;
+    background: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* -40, +70 */
+#save1 {
+    position: fixed;
+    left: 120px;
+    top: 240px;
+}
+
+#save2 {
+    position: fixed;
+    left: 390px;
+    top: 290px;
+}
+#save3 {
+    position: fixed;
+    left: 475px;
+    top: 180px;
+}
+
+#save4 {
+    position: fixed;
+    left: 535px;
+    top: 325px;
+}
+
+#save5 {
+    position: fixed;
+    left: 645px;
+    top: 240px;
+}
+
+#save6 {
+    position: fixed;
+    left: 825px;
+    top: 180px;
+}
+
+#save7 {
+    position: fixed;
+    left: 840px;
+    top: 335px;
+}
+
+#save8 {
+    position: fixed;
+    left: 905px;
+    top: 420px;
+}
+
+#save9 {
+    position: fixed;
+    left: 1085px;
+    top: 220px;
+}
+
+#save10 {
+    position: fixed;
+    left: 1180px;
+    top: 380px;
+}
+
+#save11 {
+    position: fixed;
+    left: 1240px;
+    top: 245px;
+}
+
+#save12 {
+    position: fixed;
+    left: 1460px;
+    top: 265px;
+}
+
+#save13 {
+    position: fixed;
+    left: 870px;
+    top: 600px;
+}
+
+#save14 {
+    position: fixed;
+    left: 1330px;
+    top: 545px;
+}
+
+#save15 {
+    position: fixed;
+    left: 330px;
+    top: 740px;
+}
+
+#save16 {
+    position: fixed;
+    left: 495px;
+    top: 875px;
+}
+
+#save17 {
+    position: fixed;
+    left: 660px;
+    top: 800px;
+}
+
+#save18 {
+    position: fixed;
+    left: 1050px;
+    top: 935px;
+}
+
+#save19 {
+    position: fixed;
+    left: 1235px;
+    top: 715px;
+}
+
+#save20 {
+    position: fixed;
+    left: 1485px;
+    top: 870px;
+}
