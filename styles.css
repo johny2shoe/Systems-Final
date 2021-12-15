@@ -20,6 +20,14 @@ body {
     z-index: -10;
 }
 
+#botanical-head {
+    position: fixed;
+    top: 90%;
+    left: 72%;
+    color: whitesmoke;
+    background: green;
+}
+
 /* To do */
    /* Page formatting */
    /* Pop up */
