@@ -62,7 +62,7 @@ currentNote.onclick = function() {
   clickSynth.triggerAttackRelease(playNote, "8n");
   //Store Note in Array
   notesArray.unshift(playNote);
-  if(notesArray.length > 4){
+  if(notesArray.length > 3){
     notesArray.pop();
   }
   console.log(notesArray);
